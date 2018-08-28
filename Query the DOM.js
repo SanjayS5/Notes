@@ -30,7 +30,7 @@ books.forEach(function(book){
 
 
 // Converting the collection of elements (known as a "NODE LIST") returned by querySelectorAll() into an array: 
-// OPTIONAL - Not required at all
+// OPTIONAL - Not required at all, UNLESS we use document.getElementsByClassName();
 x = Array.from(books);
 
 x.forEach(function(book){

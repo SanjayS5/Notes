@@ -98,7 +98,7 @@ bookList.innerHTML += '<h2>This is how you add HTML</h2>';
 
 
 
-// To find sibling element sibling:
+// To find element sibling:
       const bookList = document.querySelector("#book-list");
 
       console.log('book-list next element sibling is: ', bookList.nextElementSibling);

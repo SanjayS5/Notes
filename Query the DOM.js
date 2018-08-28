@@ -1,3 +1,5 @@
+// Notes based on The Net Ninja's DOM Tutorials
+
 // To query the DOM, there are two main methods:
 
 document.querySelector();

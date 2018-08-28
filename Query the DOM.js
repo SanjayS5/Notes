@@ -23,7 +23,7 @@ const books = document.querySelectorAll("#book-list li .name");
 console.log(books);
 
 
-// Converting the collection of elements returned by querySelectorAll() into an array: 
+// Converting the collection of elements (known as a "NODE LIST") returned by querySelectorAll() into an array: 
 
 x = Array.from(books);
 

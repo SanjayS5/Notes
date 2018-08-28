@@ -22,9 +22,15 @@ const books = document.querySelectorAll("#book-list li .name");
 
 console.log(books);
 
+// Iterating over node list returned by querySelectorAll:
+
+books.forEach(function(book){
+  console.log(book);
+})
+
 
 // Converting the collection of elements (known as a "NODE LIST") returned by querySelectorAll() into an array: 
-
+// OPTIONAL - Not required at all
 x = Array.from(books);
 
 x.forEach(function(book){

@@ -189,3 +189,55 @@ bookList.innerHTML += '<h2>This is how you add HTML</h2>';
               console.log(value);
             });
 
+// Lesson #12 and #13 (Adding to code from #11)
+
+        // Creating elements and adding them to the document
+
+        addForm.addEventListener('submit', function(e){
+          e.preventDefault();
+          const value = addForm.querySelector('input[type="text"]').value;
+
+          // create elements
+          const li = document.createElement('li');
+          const bookName = document.createElement('span');
+          const deleteBtn = document.createElement('span');
+
+          // add content
+
+          deleteBtn.textContent = 'delete';
+          bookName.textContent = value;
+            
+          // add classes
+
+          bookName.classList.add('name');
+          deleteBtn.classList.add('delete');
+
+          // append to document (with appendChild)
+
+          li.appendChild(bookName);
+          li.appendChild(deleteBtn);
+          list.appendChild(li);
+          // list is a global variable defined in an earlier lesson (see lesson #10) so we can use it here
+        });
+
+
+// Lesson #14 Get and Set attributes
+
+        var book = document.querySelector('li:first-child.name');
+
+        book.getAttribute('class'); 
+        // Returns the class of the elements: 'name' in this case
+
+        book.setAttribute('class', 'name-2');
+        // Replaces the original class of 'name' with a new class of 'name-2'
+        // setAttribute takes two arguments, the first is the one we want to replace, the second is what it will be replaced with
+
+
+        // Check if an element has an attribute
+        book.hasAttribute('class'); // Returns a boolean value. In this case, it's true 
+
+        // Remove attributes
+        book.removeAttribute('class');
+
+
+

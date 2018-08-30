@@ -99,6 +99,7 @@ bookList.innerHTML += '<h2>This is how you add HTML</h2>';
 
 
 // To find element sibling:
+
       const bookList = document.querySelector("#book-list");
 
       console.log('book-list next element sibling is: ', bookList.nextElementSibling);
@@ -146,4 +147,45 @@ bookList.innerHTML += '<h2>This is how you add HTML</h2>';
         console.log('Navigation to ', e.target.textContent, ' was prevented');
       });
 
+// Lesson #10:
+// Attaching event listeners to the ul instead of each li for efficiency
+    
+        // Adding an event listener to each li is "expensive" and inefficient
+
+        const list = document.querySelector('#book-list ul');
+
+        // delete books
+
+        list.addEventListener('click', function(e){
+          if (e.target.className == 'delete'){
+            const li = e.target.parentElement;
+            list.removeChild(li);
+
+            // li.parentNode.removeChild(li); NOTE: This line of code does the exact same thing as list.removeChild(li);
+          }
+        })
+
+// Lesson #11
+
+        // Query the DOM for form elements:
+
+        document.forms // Returns a HTML collection
+
+        document.forms[0] // Accesses the first form element 
+
+        document.forms['add-book'] // Access the form with id #add-book
+
+        
+        // Add book list
+
+            const addForm = document.forms['add-book'];
+
+            // Forms have a 'submit' event that we can listen for. They also refresh the page by default
+            // That explains e.preventDefault(); below
+
+            addForm.addEventListener('submit', function(e){
+              e.preventDefault();
+              const value = addForm.querySelector('input[type="text"]').value;
+              console.log(value);
+            });
 

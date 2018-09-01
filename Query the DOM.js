@@ -240,4 +240,18 @@ bookList.innerHTML += '<h2>This is how you add HTML</h2>';
         book.removeAttribute('class');
 
 
+// Lesson #15: Reacting to a change event. Example: Checkboxes or radio buttons
+
+        const hideBox = document.querySelector('#hide');
+
+        hideBox.addEventListener('change', function(e){
+          if(hideBox.checked){
+            list.style.display = "none";
+          } else {
+            list.style.display = "initial";
+          }
+        });
+
+
+
 

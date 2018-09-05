@@ -253,5 +253,52 @@ bookList.innerHTML += '<h2>This is how you add HTML</h2>';
         });
 
 
+// Lesson #16 Custom Search Filter
 
+        const searchBar = document.forms['search-books'].querySelector('input');
 
+        searchBar.addEventListener('keyup', function(e){
+          const term = e.target.value.toLowerCase();
+          const books = list.getElementsByTagName('li');
+          Array.from(books).forEach(function(book){
+            const title = book.firstElementChild.textContent;
+            if (title.toLowerCase().indexOf(term) != -1){
+              book.style.display = 'block';
+            } else {
+              book.style.display = 'none';
+            }
+          });
+        });
+
+// Lesson #17 Tabbed Content
+
+const tabs = document.querySelector('.tabs');
+const panels = document.querySelectorAll('.panel');
+
+tabs.addEventListener('click', function(e){
+  if (e.target.tagName == "LI") {
+    const targetPanel = document.querySelector(e.target.dataset.target);
+    // .dataset looks for data attributes like the data-target attr in the HTML
+    // the second .target is a custom name. It couldn've been dataset.beans for example.
+    panels.forEach(function(panel){
+      if (panel == targetPanel) {
+        panel.classList.add('active');
+      } else {
+        panel.classList.remove('active');
+      } // The block above adds a class of 'active' if the target of the click is the target panel
+    }) // if not, it removes the class of 'active'
+  }
+});
+
+// Lesson #18 DOM Content Loaded
+
+        document.addEventListener('DOMContentLoaded', function(){ 
+            
+        }
+                                  
+// If the script tags are not at the bottom of your HTML, Javascript code won't work, 
+// (because event listeners can't attach to something that doesn't yet exist). To get around this, 
+// add all of the JS code into the event listener above and it will only run once the DOM content has loaded. 
+                                  
+                                  
+// Thanks for stopping by! I hope you found this summary useful!

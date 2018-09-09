@@ -39,7 +39,7 @@ console.log(books);
 
     // Can be done at one go:
 
-      Array.from(books).forEach(funtion(book){
+      Array.from(books).forEach(function(book){
         console.log(book);
       })
 
